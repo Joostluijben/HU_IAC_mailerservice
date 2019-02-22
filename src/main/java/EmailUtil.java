@@ -23,9 +23,9 @@ public class EmailUtil {
             msg.addHeader("format", "flowed");
             msg.addHeader("Content-Transfer-Encoding", "8bit");
 
-            msg.setFrom(new InternetAddress("joost.luijben@student.hu.nl", "NoReply-JD"));
+            msg.setFrom(new InternetAddress("noreply@hu.nl", "NoReply-HU"));
 
-            msg.setReplyTo(InternetAddress.parse("joost.luijben@student.hu.nl", false));
+            msg.setReplyTo(InternetAddress.parse(toEmail, false));
 
             msg.setSubject(subject, "UTF-8");
 
@@ -34,10 +34,9 @@ public class EmailUtil {
             msg.setSentDate(new Date());
 
             msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
-            System.out.println("Message is ready");
             Transport.send(msg);
 
-            System.out.println("EMail Sent Successfully!!");
+            System.out.println("EMail Sent Successfully to " + toEmail + "!!");
         } catch (Exception e) {
             e.printStackTrace();
         }

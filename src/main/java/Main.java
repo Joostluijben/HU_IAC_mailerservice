@@ -13,10 +13,12 @@ public class Main {
         factory.setHost("localhost");
         factory.setPort(5672);
 
+        String tomail = "joost.luijben@student.hu.nl";
+
         Connection connection = factory.newConnection();
-        Listener.listenToChannel("oranje", connection);
-        Listener.listenToChannel("rood", connection);
-        Listener.listenToChannel("geel", connection);
+        Listener.listenToChannel("oranje", connection, tomail);
+        Listener.listenToChannel("rood", connection, tomail);
+        Listener.listenToChannel("geel", connection, tomail);
 
 
     }

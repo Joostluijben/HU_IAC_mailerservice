@@ -6,12 +6,11 @@ import javax.mail.Session;
 
 public class Mail {
 
-    public static void sendMail(String message) {
+    public static void sendMail(String message, String tomail) {
 
-        System.out.println("SimpleEmail Start");
 
         String smtpHostServer = "smtp.hu.nl";
-        String emailID = "joost.luijben@student.hu.nl";
+        String emailID = tomail;
 
         Properties props = System.getProperties();
 
